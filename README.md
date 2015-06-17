@@ -14,6 +14,12 @@ To setup very basic setting on your server.
 1. Add remotes to /etc/salt/master
 
   ```yaml
+    fileserver_backend:
+      - git
+      - roots //since we have local state files too
+  ```
+
+  ```yaml
   gitfs_remotes:
     - git://github.com/trexglobal/openssh-formula
     - git://github.com/trexglobal/basic-formula
@@ -34,3 +40,4 @@ To setup very basic setting on your server.
     'some.server.example.com':
       - basic
   ```
+4. Restart salt master
